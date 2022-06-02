@@ -10,7 +10,7 @@ const Minting = () => {
   const address = useAddress();
   const connectWithMetamask = useMetamask();
   const disconnectWallet = useDisconnect();
-  const NFTDrop = useEditionDrop("0x84f0E7275D78338e7e7938A0204c856b9E2B2bbe")
+  const EditionDrop = useEditionDrop("0x84f0E7275D78338e7e7938A0204c856b9E2B2bbe")
 
   const mint = async () => {
     if(EditionDrop && address) {
@@ -35,7 +35,7 @@ const Minting = () => {
 
   useEffect(() => {
     const getTotal = async () => {
-      if(editionDrop) {
+      if(EditionDrop) {
         const total = await EditionDrop.totalSupply(0);
         setTotalSupply(total.toNumber());
       }

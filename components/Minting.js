@@ -36,7 +36,7 @@ const Minting = () => {
   useEffect(() => {
     const getTotal = async () => {
       if(editionDrop) {
-        const total = await NFTDrop.totalSupply(0);
+        const total = await EditionDrop.totalSupply(0);
         setTotalSupply(total.toNumber());
       }
     }

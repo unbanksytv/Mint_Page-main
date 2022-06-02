@@ -47,7 +47,7 @@ const Minting = () => {
     <Container>
       <Mint>
         <TitleContainer>
-          <Title>DD and LTL <br /> Offering You<br /> This Free Mint</Title>
+          <Title>DD and LTL are <br /> Offering You<br /> A Special NFT</Title>
           <Count>
             {address && totalSupply}
           </Count>

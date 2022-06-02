@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import tw from "tailwind-styled-components";
-import { useAddress, useDisconnect, useMetamask, useEditionDrop } from '@thirdweb-dev/react';
+import { useAddress, useDisconnect, useMetamask, useNFTDrop } from '@thirdweb-dev/react';
 import ReactLoading from "react-loading";
 
 const Minting = () => {
@@ -10,12 +10,12 @@ const Minting = () => {
   const address = useAddress();
   const connectWithMetamask = useMetamask();
   const disconnectWallet = useDisconnect();
-  const editionDrop = useEditionDrop("0x84f0E7275D78338e7e7938A0204c856b9E2B2bbe")
+  const NFTDrop = useNFTDrop("0x84f0E7275D78338e7e7938A0204c856b9E2B2bbe")
 
   const mint = async () => {
-    if(editionDrop && address) {
+    if(NFTDrop && address) {
       setInProgress(true);
-      const tx = await editionDrop.claimTo(address, 0, 1);
+      const tx = await NFTDrop.claimTo(address, 0, 1);
       console.log(tx);
       setInProgress(false);
       setCompleted(true)
@@ -36,12 +36,12 @@ const Minting = () => {
   useEffect(() => {
     const getTotal = async () => {
       if(editionDrop) {
-        const total = await editionDrop.totalSupply(0);
+        const total = await NFTDrop.totalSupply(0);
         setTotalSupply(total.toNumber());
       }
     }
     getTotal();
-  }, [editionDrop])
+  }, [NFTDrop])
 
   return (
     <Container>

@@ -15,7 +15,7 @@ const Minting = () => {
   const mint = async () => {
     if(EditionDrop && address) {
       setInProgress(true);
-      const tx = await NFTDrop.claimTo(address, 0, 1);
+      const tx = await EditionDrop.claimTo(address, 0, 1);
       console.log(tx);
       setInProgress(false);
       setCompleted(true)

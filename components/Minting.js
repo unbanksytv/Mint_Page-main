@@ -47,7 +47,7 @@ const Minting = () => {
     <Container>
       <Mint>
         <TitleContainer>
-          <Title>Welcome to<br /> the Good Vibes<br /> The Good Life</Title>
+          <Title>DD and LTL <br /> Offering You<br /> This Free Mint</Title>
           <Count>
             {address && totalSupply}
           </Count>

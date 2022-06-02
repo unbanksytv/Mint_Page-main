@@ -10,7 +10,7 @@ const Minting = () => {
   const address = useAddress();
   const connectWithMetamask = useMetamask();
   const disconnectWallet = useDisconnect();
-  const EditionDrop = useEditionDrop("0xDfcD54ec6FF420e243Bba781177209600fBF6867")
+  const EditionDrop = useEditionDrop("0x01d78f795D1873196eAB98b738EB59629b9F7D50")
 
   const mint = async () => {
     if(EditionDrop && address) {

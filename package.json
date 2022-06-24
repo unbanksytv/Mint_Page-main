@@ -1,5 +1,5 @@
 {
-  "name": "bored-ape-clone",
+  "name": "gvo-free-mint",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -16,7 +16,14 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-loading": "^2.0.3",
-    "tailwind-styled-components": "^2.1.7"
+    "react-toastify": "^9.0.5",
+    "react-tsparticles": "^2.1.0",
+    "tailwind-styled-components": "^2.1.7",
+    "tsparticles": "^2.1.0",
+    "tsparticles-plugin-absorbers": "^2.1.0",
+    "tsparticles-updater-life": "^2.1.0",
+    "tsparticles-updater-roll": "^2.1.0",
+    "tsparticles-updater-wobble": "^2.1.0"
   },
   "devDependencies": {
     "eslint": "8.15.0",

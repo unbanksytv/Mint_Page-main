@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <Container>
       <FooterContainer>
-        Dimitri Daniloff and LiveTheLifeTV are sending you Good Vibes OHMly. Exclusive NFT for all Odyssey Genesis Holders. (Wave One OHMly)
+        Dimitri Daniloff and LiveTheLifeTV are sending you Good Vibes OHMly. Exclusive NFT for all Wave One Odyssey Genesis Minters.
       </FooterContainer>
     </Container>
   )

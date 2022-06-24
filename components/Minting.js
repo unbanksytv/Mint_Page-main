@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import tw from "tailwind-styled-components";
 import { useAddress, useDisconnect, useMetamask, useEditionDrop } from '@thirdweb-dev/react';
 import ReactLoading from "react-loading";
+import { toast } from "react-toastify";
+import { useRouter } from 'next/router'
 
 const Minting = () => {
   const [totalSupply, setTotalSupply] = useState(0);
@@ -10,27 +12,25 @@ const Minting = () => {
   const address = useAddress();
   const connectWithMetamask = useMetamask();
   const disconnectWallet = useDisconnect();
-  const EditionDrop = useEditionDrop("0x84f0E7275D78338e7e7938A0204c856b9E2B2bbe")
+  const EditionDrop = useEditionDrop("0x01d78f795D1873196eAB98b738EB59629b9F7D50")
+  const router = useRouter()
 
   const mint = async () => {
     if(EditionDrop && address) {
       setInProgress(true);
-      const tx = await EditionDrop.claimTo(address, 0, 1);
-      console.log(tx);
-      setInProgress(false);
-      setCompleted(true)
+      try {
+        await EditionDrop.claimTo(address, 0, 1);
+        setInProgress(false);
+        setCompleted(true);
+        router.push('/success')
+        toast.success('🦄 Mint Successful!')
+      } catch (error) {
+        console.log(error)
+        setInProgress(false)
+        setCompleted(false)
+        toast.error('Sorry mint failed. Please try again.')
+      }
     }
-  }
-
-  const viewOpenSea = () => {
-    const url = "https://testnets.opensea.io/collection/special-edition"
-    window.open(url, "_blank");
-  }
-
-  const startOver = () => {
-    setCompleted(false);
-    setInProgress(false);
-    disconnectWallet();
   }
 
   useEffect(() => {
@@ -57,23 +57,20 @@ const Minting = () => {
               address
                 ? <>
                 {
-                  completed
-                  ? <FilledButton onClick={viewOpenSea}>
-                    View OpenSea
-                  </FilledButton>
-                    : <FilledButton
-                    disabeld={inProgress}
-                    onClick={mint}
-                  >
-                    {
-                      inProgress
-                      ? <ReactLoading type="bubbles" color="#000" height={64} />
-                      : <>Mint</>
-                    }
-                  </FilledButton>
+                  !completed &&
+                    <FilledButton
+                      disabled={inProgress}
+                      onClick={mint}
+                    >
+                      {
+                        inProgress
+                        ? <ReactLoading type="bubbles" color="#000" height={64} />
+                        : <>Mint</>
+                      }
+                    </FilledButton>
                 }
                 <UnfilledButton
-                  disabeld={inProgress}
+                  disabled={inProgress}
                   onClick={disconnectWallet}
                 >
                   Disconnect

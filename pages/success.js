@@ -4,14 +4,14 @@ import Script from "next/script";
 
 // Components
 import Header from "../components/Header";
-import Main from "../components/Main";
+import SuccessfulMint from "../components/SuccessfulMint";
 import Footer from "../components/Footer";
 
-export default function Home() {
+export default function Success() {
   return (
     <Container>
       <Head>
-        <title>Good Vibes Ohmly</title>
+        <title>Good Vibes Ohmly - Mint Successful</title>
         <meta name="description" content="Made with love by LiveTheLifeTV" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -20,7 +20,7 @@ export default function Home() {
         src="https://cdn.tailwindcss.com"
       />
       <Header />
-      <Main />
+      <SuccessfulMint />
       <Footer />
     </Container>
   )

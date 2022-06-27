@@ -1,9 +1,9 @@
 import tw from "tailwind-styled-components";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import { useRouter } from "next/router";
 
 import { CONFETTI_CONFIG } from "../common/constants";
-import { useRouter } from "next/router";
 
 const SuccessfulMint = () => {
   const router = useRouter()

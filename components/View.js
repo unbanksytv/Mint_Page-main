@@ -1,28 +1,40 @@
 import tw from "tailwind-styled-components";
-import Minting from "./Minting";
+import { useEditionDrop, MediaRenderer, useNFT } from "@thirdweb-dev/react";
 
 const View = () => {
+  const nftCollection = useEditionDrop('0x01d78f795D1873196eAB98b738EB59629b9F7D50');
+  const {
+    data: nft,
+    isLoading,
+    error,
+  } = useNFT(nftCollection, 0)
+
   return (
+    !isLoading && 
     <Container>
       <VideoContainer>
-        <Video src="./Odyssey_gift.mp4" muted={true} autoPlay={true} loop={true} />
+        <MediaRenderer
+          src={nft?.metadata.animation_url}
+          alt={nft?.metadata.name}
+        />
       </VideoContainer>
       <TitleContainer>
-        <Title>DD and LTL are <br /> Offering You<br /> A Special NFT</Title>
+        <Title>
+          {nft?.metadata.name}
+        </Title>
       </TitleContainer>
+      <DescriptionContainer>
+        {nft?.metadata.description}
+      </DescriptionContainer>
     </Container>
   )
 }
 
 export default View
 
-const Video = tw.video`
- 
-`
-
 const VideoContainer = tw.div`
+ mt-12
  max-w-screen-lg
- 
 `
 
 const Container = tw.div`
@@ -34,6 +46,10 @@ const Container = tw.div`
 const TitleContainer = tw.div`
  text-white
  flex
+`
+
+const DescriptionContainer = tw.div`
+
 `
 
 const Title = tw.h2`

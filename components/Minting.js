@@ -4,6 +4,7 @@ import { useAddress, useDisconnect, useMetamask, useEditionDrop } from '@thirdwe
 import ReactLoading from "react-loading";
 import { toast } from "react-toastify";
 import { useRouter } from 'next/router'
+import { Button } from "./Button";
 
 const Minting = () => {
   const [totalSupply, setTotalSupply] = useState(0);
@@ -58,27 +59,28 @@ const Minting = () => {
                 ? <>
                 {
                   !completed &&
-                    <FilledButton
+                    <Button
                       disabled={inProgress}
-                      onClick={mint}
+                      onclick={mint}
                     >
                       {
                         inProgress
                         ? <ReactLoading type="bubbles" color="#000" height={64} />
                         : <>Mint</>
                       }
-                    </FilledButton>
+                    </Button>
                 }
-                <UnfilledButton
+                <Button
+                  style='ghost'
                   disabled={inProgress}
-                  onClick={disconnectWallet}
+                  onclick={disconnectWallet}
                 >
                   Disconnect
-                </UnfilledButton>
+                </Button>
                 </>
-                :<FilledButton onClick={connectWithMetamask}>
+                :<Button onclick={connectWithMetamask}>
                   Connect Wallet
-                </FilledButton>
+                </Button>
             }
         </ButtonContainer>
       </Mint>
@@ -93,23 +95,6 @@ const Count = tw.div`
  grow
  items-center
  justify-center
-`
-
-const FilledButton = tw.button`
- flex
- justify-center
- items-center
- flex-1
- bg-[#bfc500] hover:bg-white transition-all text-black font-bold py-2 px-4 rounded uppercase h-14
-`
-
-const UnfilledButton = tw(FilledButton)`
- bg-black
- text-[#bfc500]
- border-2
- border-[#bfc500]
- hover:bg-[#bfc500]
- hover:text-black
 `
 
 const ButtonContainer = tw.div`

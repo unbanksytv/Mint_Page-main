@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 
 import 'react-toastify/dist/ReactToastify.min.css'
 
-const activeChainId = ChainId.Rinkeby;
+export const activeChainId = ChainId.Rinkeby;
 
 function MyApp({ Component, pageProps }) {
   return (

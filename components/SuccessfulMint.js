@@ -4,6 +4,7 @@ import { loadFull } from "tsparticles";
 import { useRouter } from "next/router";
 
 import { CONFETTI_CONFIG } from "../common/constants";
+import { Button } from "./Button";
 
 const SuccessfulMint = () => {
   const router = useRouter()
@@ -17,11 +18,11 @@ const SuccessfulMint = () => {
       <Heading>
         Mint Successful
       </Heading>
-      <FilledButton
-        onClick={() => router.push('/view')}
+      <Button
+        onclick={() => router.push('/view')}
       >
         View NFT
-      </FilledButton>
+      </Button>
       <Particles id="tsparticles" options={CONFETTI_CONFIG} init={particlesInit} />
     </Container>
   )
@@ -42,21 +43,5 @@ const Heading = tw.h1`
   text-6xl
   font-bold
   italic
-`
-
-const FilledButton = tw.button`
- flex
- justify-center
- items-center
- bg-[#bfc500]
- hover:bg-white
- transition-all
- text-black
- font-bold
- py-2
- px-4
- rounded
- uppercase
- h-14
- mt-8
+  mb-8
 `

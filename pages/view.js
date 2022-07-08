@@ -1,6 +1,5 @@
 import Head from "next/head";
 import tw from "tailwind-styled-components";
-import Script from "next/script";
 
 // Components
 import Header from "../components/Header";
@@ -15,10 +14,6 @@ export default function ViewNFT() {
         <meta name="description" content="Made with love by LiveTheLifeTV" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Script 
-        id="tailwind"
-        src="https://cdn.tailwindcss.com"
-      />
       <Header />
       <View />
       <Footer />
@@ -32,4 +27,7 @@ const Container = tw.div`
  bg-black
  text-white
  px-7
+ flex
+ flex-col
+ justify-between
 `

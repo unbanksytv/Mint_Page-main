@@ -13,7 +13,7 @@ const SolidButton = tw.button`
  flex
  justify-center
  items-center
- bg-[#bfc500]
+ bg-[#f9d500]
  hover:bg-white
  transition-all
  text-black
@@ -27,9 +27,9 @@ const SolidButton = tw.button`
 
 const GhostButton = tw(SolidButton)`
  bg-black
- text-[#bfc500]
+ text-[#f9d500]
  border-2
- border-[#bfc500]
- hover:bg-[#bfc500]
+ border-[#f9d500]
+ hover:bg-[#f9d500]
  hover:text-black
 `

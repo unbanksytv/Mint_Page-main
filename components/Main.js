@@ -13,7 +13,7 @@ const Main = () => {
     <ModalContainer>
       <Modal>
         <H2>Wrong network</H2>
-        <p>You are connected to the wrong network.</p>
+        <Content>You are connected to the wrong network.</Content>
         <Button onclick={() => switchNetwork(activeChainId)}>Switch Network</Button>
       </Modal>
     </ModalContainer>
@@ -39,6 +39,10 @@ const H2 = tw.h2`
   text-4xl
 `
 
+const Content = tw.p`
+  my-5
+`
+
 const ModalContainer = tw.div`
   flex
   backdrop-blur-sm
@@ -56,12 +60,15 @@ const Modal = tw.div`
   p-5
   bg-black
   rounded-lg
-  h-1/3
-  w-1/3
+  h-full
+  md:h-64
+  lg:h-52
+  md:w-1/3
   flex
   flex-col
   mt-10
-  justify-between
+  justify-start
+  lg:justify-between
 `
 
 const VideoContainer = tw.div`

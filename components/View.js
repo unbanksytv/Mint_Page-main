@@ -49,7 +49,12 @@ const TitleContainer = tw.div`
 `
 
 const DescriptionContainer = tw.div`
-
+ flex
+ mt-3
+ justify-center
+ text-center
+ text-lg
+ font-bold
 `
 
 const Title = tw.h2`

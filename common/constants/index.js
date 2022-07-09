@@ -5,9 +5,10 @@ export const CONFETTI_CONFIG = {
     },
     "color": {
       "value": [
-        "#00FFFC",
-        "#FC00FF",
-        "#fffc00"
+        "#db7d2f",
+        "#f9d500",
+        "#a10f0f",
+        "#31345a"
       ]
     },
     "shape": {

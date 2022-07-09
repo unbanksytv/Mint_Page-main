@@ -50,7 +50,7 @@ const TitleContainer = tw.div`
 
 const DescriptionContainer = tw.div`
  flex
- mt-12
+ max-w-screen-lg
  justify-center
  text-center
  text-lg

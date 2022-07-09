@@ -13,7 +13,7 @@ const Minting = () => {
   const address = useAddress();
   const connectWithMetamask = useMetamask();
   const disconnectWallet = useDisconnect();
-  const EditionDrop = useEditionDrop("0x01d78f795D1873196eAB98b738EB59629b9F7D50")
+  const EditionDrop = useEditionDrop("0xC7801dB88D4cCdFD8deAF53aeD8A546f2016Fda1")
   const router = useRouter()
 
   const mint = async () => {
@@ -24,12 +24,12 @@ const Minting = () => {
         setInProgress(false);
         setCompleted(true);
         router.push('/success')
-        toast.success('🦄 Mint Successful!')
+        toast.success('🦄 Mint Successful! LFG')
       } catch (error) {
         console.log(error)
         setInProgress(false)
         setCompleted(false)
-        toast.error('Sorry mint failed. Please try again.')
+        toast.error('Looks like you do not have an Odyssey Genesis NFT.')
       }
     }
   }
@@ -48,7 +48,7 @@ const Minting = () => {
     <Container>
       <Mint>
         <TitleContainer>
-          <Title>DD and LTL are <br /> Offering You<br /> A Special NFT</Title>
+          <Title>Dimitri Daniloff <br /> and LiveTheLife<br /> Have a Free Gift.</Title>
           <Count>
             {address && totalSupply}
           </Count>

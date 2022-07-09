@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <Container>
       <FooterContainer>
-        Dimitri Daniloff and LiveTheLifeTV are sending you Good Vibes OHMly. Exclusive NFT for all Wave One Odyssey Genesis Minters.
+      Limited Edition NFT for all Wave One Odyssey Genesis Minters. © 2022 Degen Vibes LLC
       </FooterContainer>
     </Container>
   )

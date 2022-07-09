@@ -3,7 +3,7 @@ import { useEditionDrop, MediaRenderer, useNFT } from "@thirdweb-dev/react";
 import { Button } from "./Button";
 
 const View = () => {
-  const nftCollection = useEditionDrop('0x01d78f795D1873196eAB98b738EB59629b9F7D50');
+  const nftCollection = useEditionDrop('0xC7801dB88D4cCdFD8deAF53aeD8A546f2016Fda1');
   const {
     data: nft,
     isLoading,
